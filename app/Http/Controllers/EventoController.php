@@ -13,7 +13,7 @@ class EventoController extends Controller
      */
     public function index()
     {
-        //
+        return view('eventos.index');
     }
 
     /**
@@ -21,7 +21,11 @@ class EventoController extends Controller
      */
     public function create()
     {
-        //
+        return view('eventos.create');
+    }
+
+    public function agregar(){
+        
     }
 
     /**
@@ -35,9 +39,10 @@ class EventoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Evento $evento)
+    public function show()
     {
-        //
+        $eventos = Evento::orderBy('nombreEvento','asc')->paginate(10);
+        return view('eventos.show',['lista_de_eventos' => $eventos]);
     }
 
     /**
