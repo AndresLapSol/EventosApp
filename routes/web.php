@@ -13,7 +13,15 @@ Route::get('/create', [EventoController::class, 'create'])->name('eventos.create
 
 Route::post( "/create", [EventoController::class, 'agregar'])->name('eventos.agregar');
 
-Route::get('/evento/{id}', [EventoController::class, 'show'])->name('posts.show');
+Route::delete('/eventos/{evento}', [EventoController::class, 'eliminar'])->name('eventos.eliminar');
+
+// Ruta para mostrar el formulario de edición
+Route::get('/eventos/update/{evento}', [EventoController::class, 'edit'])->name('eventos.edit');
+
+// Ruta para procesar la actualización (usando PUT)
+Route::put('/eventos/update/{evento}', [EventoController::class, 'actualizar'])->name('eventos.actualizar');
+
+Route::get('/evento/{numEvento}', [EventoController::class, 'detalle'])->name('eventos.detalle');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

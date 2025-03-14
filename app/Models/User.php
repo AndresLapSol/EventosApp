@@ -12,6 +12,23 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+
+        /**
+     * Get the eventos for the user.
+     */
+    public function eventos()
+    {
+        return $this->hasMany(Evento::class);
+    }
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -45,4 +62,6 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
 }

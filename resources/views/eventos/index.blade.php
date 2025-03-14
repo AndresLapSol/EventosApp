@@ -10,4 +10,5 @@ EventosApp
         Desde conferencias educativas hasta encuentros sociales, encuentra los eventos que te apasionan 
         y mantente al día con lo último en tu comunidad.</h2>
     <h3>Explora, inscríbete y disfruta de experiencias inolvidables con nosotros</h3>
+    <h4><a href="{{route('eventos.create')}}">CREAR EVENTO</a></h4>
 @endsection

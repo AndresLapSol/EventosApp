@@ -8,8 +8,10 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#">Eventos</a></li>
-            <li><a href="#">Crear </a></li>
+            <li><a href="{{route('login')}}">Login</a></li>
+            <li><a href="{{route('register')}}">Register</a></li>
+            <li><a href="{{route('eventos.show')}}">Eventos</a></li>
+            <li><a href="{{route('eventos.index')}}">Index</a></li>
         </ul>
     </nav>
     @yield('contenido')
